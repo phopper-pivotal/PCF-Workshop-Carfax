@@ -32,7 +32,7 @@ Time | Session
 1:00 PM - 2:00 PM | _Session 4: Spring Data / REST on Cloud Foundry with Labs_
 2:00 PM - 3:00 PM | _Session 5: Installing Pivotal Cloud Foundry_
 3:00 PM - 4:00 PM | _Session 6: Pivotal Cloud Foundry Day 2 Operations_
-4:00 PM - 4:30 PM | _Wrap-up, Q&A, What's next?_
+4:00 PM - 4:30 PM | _Session 7: Wrap-up, Q&A, What's next?_
 
 This is a _loose_ schedule for the day. We will adjust as necessary based on our pace through the material.
 
