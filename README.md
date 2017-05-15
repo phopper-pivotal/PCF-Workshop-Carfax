@@ -9,7 +9,7 @@ This workshop will focus on the Pivotal Cloud Foundry Developer persona. We will
 * Creating applications that are optimized for the cloud
 
 ## Outcomes of Workshop
-* Comfort with cf command line tools and deploying to pcf
+* Comfort with cf command line tools and deploying to PCF
 * Increased familiarity with operations and the platform
 * Ability to configure and provision services
 * Understanding of using PCF for logging and metrics
