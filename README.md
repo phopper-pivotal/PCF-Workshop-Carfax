@@ -24,7 +24,7 @@ This workshop will focus on the Pivotal Cloud Foundry Developer persona. We will
 
 ## Labs
 * Pre-work
-* From Zero to Pushing Your First Application
+  * From Zero to Pushing Your First Application
 * Spring Boot
 * Spring Profiles
 * Spring Actuator
@@ -41,12 +41,18 @@ Start by downloading and installing the appropriate prerequisite tools.
 - [Gradle](https://services.gradle.org/distributions/gradle-3.1-all.zip) to build labs using Gradle
 - [Git Client](https://git-scm.com/downloads) to clone Github repo or download and unzip
 - An IDE, like [Spring Tool Suite](https://spring.io/tools/sts/all) or [IntelliJ IDEA](https://www.jetbrains.com/idea/download/)
-- [Java SE Development Kit](http://info.pivotal.io/n0I60i3021AN0JU0le10CRR)
+- [Java SE Development Kit version 8](http://info.pivotal.io/n0I60i3021AN0JU0le10CRR)
 
 ### Download Materials
 Next, download the course materials. This can be accomplished either through the GitHub website by downloading a repository zip and unzipping locally, or if you have Git installed, use the following commands:
 ```
 $ git clone https://github.com/phopper-pivotal/PCF-Dev-Workshop-Shelter.git
+Cloning into 'PCF-Dev-Workshop-Shelter'...
+remote: Counting objects: 374, done.
+remote: Total 374 (delta 0), reused 0 (delta 0), pack-reused 374
+Receiving objects: 100% (374/374), 90.87 MiB | 13.65 MiB/s, done.
+Resolving deltas: 100% (78/78), done.
+
 $ cd PCF-Dev-Workshop-Shelter/
 ```
 
