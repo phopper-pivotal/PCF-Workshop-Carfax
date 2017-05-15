@@ -40,15 +40,20 @@ The lectures for this workshop are generally light and are only intended to set 
 The overwhelming majority of our time will be spent engaging with the technology directly!
 
 ## Labs
-* Pre-work
+* Cloud Foundry Basics
   * From Zero to Pushing Your First Application
-* Spring Boot
-* Spring Profiles
-* Spring Actuator
-* Spring Data
-* Spring Data REST
-* Monitoring Your Application
-* Operating Your Application
+  * Binding to Cloud Foundry Services
+  * Scaling Applications
+  * Monitoring Applications
+* Spring
+  * Spring Boot
+  * Spring Profiles
+  * Spring Actuator
+  * Spring Data
+  * Spring Data REST
+* Day 2 Operations
+  * Monitoring Your Application
+  * Operating Your Application
 
 ## Getting Started
 ### Pre-requisites
