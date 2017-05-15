@@ -1,0 +1,13 @@
+---
+applications:
+- name: scale-demo
+  memory: 128M
+  instances: 1
+  host: scale-${random-word}
+  path: .
+  stack: cflinuxfs2
+#  services:
+#    - testing
+#  env:
+#    NEW_RELIC_LOG_LEVEL: debug
+#    NEW_RELIC_LOG_FILE_PATH: STDOUT
