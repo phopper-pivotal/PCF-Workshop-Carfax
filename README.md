@@ -15,12 +15,29 @@ This workshop will focus on the Pivotal Cloud Foundry Developer persona. We will
 * Understanding of using PCF for logging and metrics
 
 ## Agenda
-* Session 1
-* Session 2
-* Session 3
-* Session 4
-* Session 5
-* Labs
+
+### Overview
+* PCF Overview and Cloud Native Architecture (with labs)
+* Spring for PCF (Boot, Actuator, Data / REST)
+* PCF Installation (click-through install)
+* Day 2 Operations (RBAC, Scaling, Health, Updates/Patching, Auth)
+
+### Details
+Time | Session
+---- | -------
+9:00 AM - 9:30 AM | _Session 1: Cloud Native Architectures & Frameworks_
+9:30 AM - 11:00 AM | _Session 2: Pivotal Cloud Foundry Overview with Labs*_
+11:00 AM - 12:00 PM | _Session 3: Spring Boot, Profiles and Actuator with Labs*_
+12:00 PM - 1:00 PM | _Lunch_
+1:00 PM - 2:00 PM | _Session 4: Spring Data / REST on Cloud Foundry with Labs*_
+2:00 PM - 3:00 PM | _Session 5: Installing Pivotal Cloud Foundry_
+3:00 PM - 4:00 PM | _Session 6: Pivotal Cloud Foundry Day 2 Operations_
+4:00 PM - 4:30 PM | _Wrap-up, Q&A, What's next?_
+
+This is a _loose_ schedule for the day. We will adjust as necessary based on our pace through the material.
+
+The lectures for this workshop are generally light and are only intended to set the stage for the hands-on labs.
+The overwhelming majority of our time will be spent engaging with the technology directly!
 
 ## Labs
 * Pre-work
