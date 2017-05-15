@@ -14,7 +14,7 @@ This workshop will focus on the Pivotal Cloud Foundry Developer persona. We will
 * Ability to configure and provision services
 * Understanding of using PCF for logging and metrics
 
-##Agenda
+## Agenda
 * Session 1
 * Session 2
 * Session 3
