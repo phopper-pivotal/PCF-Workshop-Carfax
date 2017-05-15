@@ -46,14 +46,14 @@ Start by downloading and installing the appropriate prerequisite tools.
 ### Download Materials
 Next, download the course materials. This can be accomplished either through the GitHub website by downloading a repository zip and unzipping locally, or if you have Git installed, use the following commands:
 ```
-$ git clone https://github.com/phopper-pivotal/PCF-Dev-Workshop-Shelter.git
-Cloning into 'PCF-Dev-Workshop-Shelter'...
+$ git clone https://github.com/phopper-pivotal/PCF-Workshop-Carfax
+Cloning into 'PCF-Workshop-Carfax'...
 remote: Counting objects: 374, done.
 remote: Total 374 (delta 0), reused 0 (delta 0), pack-reused 374
 Receiving objects: 100% (374/374), 90.87 MiB | 13.65 MiB/s, done.
 Resolving deltas: 100% (78/78), done.
 
-$ cd PCF-Dev-Workshop-Shelter/
+$ cd PCF-Workshop-Carfax/
 ```
 
 ### PCF Environments
