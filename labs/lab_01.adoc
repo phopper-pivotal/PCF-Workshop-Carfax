@@ -99,6 +99,7 @@ last uploaded: Fri Feb 13 15:43:08 UTC 2015
      state     since                    cpu    memory           disk
 #0   running   2015-02-13 09:43:55 AM   0.0%   394.5M of 512M   131.1M of 1G
 ----
+[start=1]
 . The CLI is using a manifest to provide necessary configuration details such as application name, memory to be allocated, and path to the application artifact.
 Take a look at `manifest.yml` to see how.
 . In most cases, the CLI indicates each Cloud Foundry API call as it happens.
