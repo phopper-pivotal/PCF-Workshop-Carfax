@@ -16,13 +16,6 @@ This workshop will focus on the Pivotal Cloud Foundry Developer persona. We will
 
 ## Agenda
 
-### Overview
-* PCF Overview and Cloud Native Architecture
-* PCF Installation (click-through install)
-* Spring for PCF (Boot, Profiles, Actuator, Data / REST)
-* Day 2 Operations (RBAC, Scaling, Health, Updates/Patching, Auth)
-
-### Details
 Time | Session
 ---- | -------
 9:00 AM - 9:30 AM | _Session 1: Cloud Native Architectures & Frameworks_
