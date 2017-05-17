@@ -2,15 +2,15 @@
 
 ## cf target
 
-* If you haven't already, download the latest release of the [Cloud Foundry CLI](https://github.com/cloudfoundry/cli#installers-and-compressed-binaries) for your operating system and install it.
+- If you haven't already, download the latest release of the [Cloud Foundry CLI](https://github.com/cloudfoundry/cli#installers-and-compressed-binaries) for your operating system and install it.
 
-* From a command prompt, set the API target for the CLI:
+- From a command prompt, set the API target for the CLI:
 
 ```
 $ cf api --skip-ssl-validation <api.domain.com>
 ```
 
-* Login to Pivotal Cloud Foundry (or use information from your instructor to log on to Pivotal Cloud Foundry):
+- Login to Pivotal Cloud Foundry (or use information from your instructor to log on to Pivotal Cloud Foundry):
 ```
 $ cf login -u <your e-mail> -p <your pw>
 ```
@@ -18,9 +18,9 @@ Follow the prompts, choosing default organization and space.
 
 ## cf push
 
-* Change to the _Spring Music_ sample application directory:
+- Change to the _Spring Music_ sample application directory:
 
-* Push the application
+- Push the application
 ```
 $ cf push
 ```
