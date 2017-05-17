@@ -2,7 +2,7 @@
 
 ## cf target
 
-. If you haven't already, download the latest release of the link:https://github.com/cloudfoundry/cli#installers-and-compressed-binaries[Cloud Foundry CLI] for your operating system and install it.
+. If you haven't already, download the latest release of the [Cloud Foundry CLI](https://github.com/cloudfoundry/cli#installers-and-compressed-binaries) for your operating system and install it.
 
 . From a command prompt, set the API target for the CLI:
 
