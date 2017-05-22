@@ -29,7 +29,7 @@ It also keeps track of and reports how many web requests that this instance has 
 1. Now let's increase the number of running application instances to 5:
 ```
 $ cf scale -i 5 cf-scale-boot
-Scaling app cf-scale-boot in org oreilly-class / space instructor as cbusch@pivotal.io...
+Scaling app cf-scale-boot in org test / space dev as phopper@pivotal.io...
 OK
 ```
 
@@ -38,7 +38,7 @@ In reporting `OK`, the CLI is letting you know that the additional requested ins
 2. We can determine how many instances are actually running like this:
 ```
 $ cf app cf-scale-boot
-Showing health and status for app cf-scale-boot in org oreilly-class / space instructor as cbusch@pivotal.io...
+Showing health and status for app cf-scale-boot in org test / space dev as phopper@pivotal.io...
 OK
 
 requested state: started
@@ -55,13 +55,13 @@ last uploaded: Fri Feb 13 18:56:29 UTC 2015
 #4   starting   2015-02-13 03:04:33 PM   0.0%   0 of 0           0 of 0
 ```
 
-* This application instance has completed the startup process and is actually able to accept requests.
-* This application instance is still starting and will not have any requests routed to it.
+   * This application instance has completed the startup process and is actually able to accept requests.
+   * This application instance is still starting and will not have any requests routed to it.
 
 3. Eventually all instances will converge to a running state:
 ```
 $ cf app cf-scale-boot
-Showing health and status for app cf-scale-boot in org oreilly-class / space instructor as cbusch@pivotal.io...
+Showing health and status for app cf-scale-boot in org test / space dev as phopper@pivotal.io...
 OK
 
 requested state: started
@@ -83,30 +83,27 @@ Refresh several times.
 You should observe the instance index and request counters changing as you do so:
 ![](../../Common/images/cf-scale-boot-scaled.png[])
 
-The aforementioned http://docs.cloudfoundry.org/concepts/architecture/router.html[(Go)Router] is applying a random routing algorithm to all of the application instances assigned to this route.
-As an instance reaches the `running` state, its [Diego](https://docs.cloudfoundry.org/concepts/diego/diego-architecture.html) registers that instance in the routing table assigned to its route by sending a message to Cloud Foundry's message bus.
-All (Go)Router instances are subscribed to this channel and register the routes independently.
-This makes for very dynamic and rapid reconfiguration!
+The aforementioned (Go)Router is applying a random routing algorithm to all of the application instances assigned to this route. As an instance reaches the **_running_** state, its [Diego](https://docs.cloudfoundry.org/concepts/diego/diego-architecture.html) registers that instance in the routing table assigned to its route by sending a message to Cloud Foundry's message bus. All (Go)Router instances are subscribed to this channel and register the routes independently. This makes for very dynamic and rapid reconfiguration!
 
 ## Scale the Application Down
 
 1. We can scale the application instances back down as easily as we scaled them up, using the same command structure:
 ```
 $ cf scale -i 1 cf-scale-boot
-Scaling app cf-scale-boot in org oreilly-class / space instructor as cbusch@pivotal.io...
+Scaling app cf-scale-boot in org test / space dev as phopper@pivotal.io...
 OK
 ```
 
 2. Check the application status again:
 ```
 $ cf app cf-scale-boot
-Showing health and status for app cf-scale-boot in org oreilly-class / space instructor as cbusch@pivotal.io...
+Showing health and status for app cf-scale-boot in org test / space dev as phopper@pivotal.io...
 OK
 
 requested state: started
 instances: 1/1
 usage: 512M x 1 instances
-urls: cf-scale-boot-stockinged-rust.cfapps.io
+urls: cf-scale-boot-stockinged-rust.apps.pcf-apps.net
 last uploaded: Fri Feb 13 18:56:29 UTC 2015
 
      state     since                    cpu    memory         disk
