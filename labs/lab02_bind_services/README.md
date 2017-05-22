@@ -1,7 +1,7 @@
 # Lab 2 - Binding to Cloud Foundry Services
 
 > The _Spring Music_ application was designed to illustrate the ease with which various types of data services can be bound to and utilized by Spring applications running on Cloud Foundry.
-In this lab, we'll be binding the application to a ClearDB MySQL database.
+In this lab, we'll be binding the application to a MySQL database.
 > Cloud Foundry services are managed through two primary types of operations:
 > > *Create/Delete*
 > >     These operations create or delete instances of a service. For a database this could mean creating/deleting a schema in an existing multitenant cluster or creating/deleting a dedicated database cluster.
@@ -43,16 +43,12 @@ and you'll see the same service/plan/description listing in the browser:
 
 ## Creating and Binding to a Service Instance
 
-1. Let's begin by creating a MySQL instance using the ClearDB MySQL Database service broker.
+1. Let's begin by creating a MySQL instance using the MySQL Database service broker.
 From the CLI, let's _create_ a developer instance:
 ```
-$ cf create-service cleardb spark spring-music-db
+$ cf create-service p-mysql 100mb spring-music-db
 Creating service spring-music-db in org test / space dev as phopper@pivotal.io...
 OK
-```
-Or, if you are using FNTS or PEZ [see Environments](../../Common/env_info.md[see Environments):
-```
-$ cf create-service p-mysql 100mb-dev spring-music-db
 ```
 
 2. Next we'll _bind_ the newly created instance to our `spring-music` application:
@@ -70,42 +66,59 @@ $ cf env spring-music
 ```
 The subset of the output we're interested in is located near the very top, titled `System-Provided`:
 ```
-System-Provided:
 {
  "VCAP_SERVICES": {
-  "cleardb": [
+  "p-mysql": [
    {
     "credentials": {
-     "hostname": "us-cdbr-iron-east-03.cleardb.net",
-     "jdbcUrl": "jdbc:mysql://us-cdbr-iron-east-03.cleardb.net/ad_07aab44b118394d?user#b9d29bc3f0f988\u0026password#daf3aa85",
-     "name": "ad_07aab44b118394d",
-     "password": "daf3aa85",
-     "port": "3306",
-     "uri": "mysql://b9d29bc3f0f988:daf3aa85@us-cdbr-iron-east-03.cleardb.net:3306/ad_07aab44b118394d?reconnect#true",
-     "username": "b9d29bc3f0f988"
+     "hostname": "10.0.16.76",
+     "jdbcUrl": "jdbc:mysql://10.0.16.76:3306/cf_2b89923d_55c5_45bd_a94e_f0efc55c66c0?user=TzAoJ5bYJrqNVk02\u0026password=ER15DtAlect82lV6",
+     "name": "cf_2b89923d_55c5_45bd_a94e_f0efc55c66c0",
+     "password": "ER15DtAlect82lV6",
+     "port": 3306,
+     "uri": "mysql://TzAoJ5bYJrqNVk02:ER15DtAlect82lV6@10.0.16.76:3306/cf_2b89923d_55c5_45bd_a94e_f0efc55c66c0?reconnect=true",
+     "username": "TzAoJ5bYJrqNVk02"
     },
-    "label": "cleardb",
+    "label": "p-mysql",
     "name": "spring-music-db",
-    "plan": "spark",
+    "plan": "100mb",
+    "provider": null,
+    "syslog_drain_url": null,
     "tags": [
-     "Cloud Databases",
-     "Data Stores",
-     "Developer Tools",
-     "Web-based",
-     "Data Store",
-     "Single Sign-On",
-     "Buyable",
-     "relational",
      "mysql",
-     "Certified Applications"
-    ]
+     "relational"
+    ],
+    "volume_mounts": []
    }
   ]
  }
 }
+
+{
+ "VCAP_APPLICATION": {
+  "application_id": "9a6be8df-8d43-4bd6-a7b0-41b1f88808de",
+  "application_name": "spring-music",
+  "application_uris": [
+   "spring-music-chondromatous-hydrographer.apps.pcf-apps.net"
+  ],
+  "application_version": "279a4d9b-7714-4970-9735-9291522de2fd",
+  "cf_api": "https://api.system.pcf-apps.net",
+  "limits": {
+   "disk": 1024,
+   "fds": 16384,
+   "mem": 512
+  },
+  "name": "spring-music",
+  "space_id": "0d79625a-4dfc-459a-a7c5-6230eb050ae6",
+  "space_name": "dev",
+  "uris": [
+   "spring-music-chondromatous-hydrographer.apps.pcf-apps.net"
+  ],
+  "users": null,
+  "versio
 ```
 1) `VCAP_SERVICES` is a special Cloud Foundry environment variable that contains a JSON document containing all of the information for any services bound to an application.
-2) Notice here the unique URI for this instance of `cleardb` MySQL that `spring-music` has been bound to.
+2) Notice here the unique URI for this instance of `p-mysql` MySQL that `spring-music` has been bound to.
 
 4. Now let's _restage_ the application, which cycles our application back through the staging/buildpack process before redeploying the application.footnote:[In this case, we could accomplish the same goal by only _restarting_ the application via `cf restart spring-music`.
 A _restage_ is generally recommended because Cloud Foundry buildpacks also have access to injected environment variables and can install or configure things differently based on their values.]
