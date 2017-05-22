@@ -3,43 +3,43 @@
 ## let's build an entity
 1. navigate to start.spring.io
 2. configure your project
-  * group name (use **_'io.pivotal'_**')
-  * artifact name (use **_'watching'_**)
-  * *_maven_* for your build system
-  * spring boot version 1.4.1
+   * group name (use **_'io.pivotal'_**')
+   * artifact name (use **_'watching'_**)
+   * *_maven_* for your build system
+   * spring boot version 1.4.1
 4. add dependencies
-  *  Web
-  *  JPA
-  *  H2
-  *  Actuator
+   *  Web
+   *  JPA
+   *  H2
+   *  Actuator
 5. select 'Generate Project'
 6. unzip the downloaded file
 7. open your favorite IDE
-  *  import project root
-  *  java 8, use by default (if not installed, go download. god speed)
+   *  import project root
+   *  java 8, use by default (if not installed, go download. god speed)
 8. open pom.xml - what starters are there?
 9. create package io.pivotal.domain
 10. create class *_Movie_*
-  *  add `@Entity` (javax.persistence.Entity) annotation to class
-  *  add attributes 
-     *  title
-     *  year
-     * rated
-     *  released
-     *  runtime
-     *  genre
-     * add an attribute, generated value for movie identifier
+   *  add `@Entity` (javax.persistence.Entity) annotation to class
+   *  add attributes 
+       *  title
+       *  year
+       * rated
+       *  released
+       *  runtime
+       *  genre
+       * add an attribute, generated value for movie identifier
 ```java
 @Id
 @GeneratedValue
 private long id;
 ```
 
-  *  use IDE to generate getter/setter methods
-  *  use IDE to generate a default constructor void of and attributes as arguments
-  *  use IDE to generate a constructor that takes all attributes as arguments
-  *  use IDE to generate a toString method
-     *  your code should look something like this
+   *  use IDE to generate getter/setter methods
+   *  use IDE to generate a default constructor void of and attributes as arguments
+   *  use IDE to generate a constructor that takes all attributes as arguments
+   *  use IDE to generate a toString method
+       *  your code should look something like this
 ```java
 package io.pivotal.domain;
 
@@ -147,8 +147,8 @@ public class Movie implements Serializable {
 ## now expose the entity through a repository
 1. create package io.pivotal.repositories
 2. create interface **_MovieRepository_**
-  *  add `extends CrudRepository<Movie, Long>` to the interface
-  *  add method `List<Movie> findByTitle(String title);` to the interface
+   *  add `extends CrudRepository<Movie, Long>` to the interface
+   *  add method `List<Movie> findByTitle(String title);` to the interface
 
 ## a CommandLineRunner is our friend
 1. let's load this entity backed by H2 with data
@@ -195,7 +195,7 @@ how much boilerplate code did we have to introduce?
 
 ## can we query by other attributes
 1. let's add some other methods to retrieve our movies
-  *  add a method to **_MovieRepository_** to findByRated
+   *  add a method to **_MovieRepository_** to findByRated
 ```java
 List<Movie> findByRated(String rated);
 ```
@@ -241,3 +241,7 @@ no longer using prepared statements
 given we can use methods on the *_MovieRepository_* to retrieve data what other ways can you query for wildcards + 
 
 [shhh here's a hint](http://docs.spring.io/spring-data/jpa/docs/current/reference/html/#jpa.query-methods.query-creation)
+
+[Course Materials home](../../README.md#course-materials)
+
+[Lab 7 - Spring Data REST](../lab06_spring_actuator/README.md)
