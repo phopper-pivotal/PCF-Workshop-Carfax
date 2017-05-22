@@ -33,7 +33,7 @@
     *  use IDE to generate a default constructor void of and attributes as arguments
     *  use IDE to generate a constructor that takes all attributes as arguments
     *  use IDE to generate a toString method
-       *  your code should look something like this       
+    *  your code should look something like this       
 ```java
 package io.pivotal.domain;
 
@@ -183,17 +183,14 @@ public class Movie implements Serializable {
 ```
 2. from project root directory, run `mvn sprint-boot:run`
 
-what just happened?
+**_what just happened?_**
 
-how much boilerplate code did we have to introduce?
+**_how much boilerplate code did we have to introduce?_**
 
 ## can we query by other attributes
 1. let's add some other methods to retrieve our movies
-   *  add a method to **_MovieRepository_** to findByRated
-```java
-List<Movie> findByRated(String rated);
-```
-  *  add code to the CommandLineRunner in *_WatchingApplication_* to output findByRated
+   *  add a method to **_MovieRepository_** to findByRated `List<Movie> findByRated(String rated);`
+   *  add code to the CommandLineRunner in **_WatchingApplication_** to output findByRated
   
 ```java
 // fetch movies by rated
@@ -204,11 +201,11 @@ System.out.println();
 ```
 2. from project root directory, run `mvn sprint-boot:run` +
 
-what just happened?
+**_what just happened?_**
 
 ## that's great but what about wildcards
 1. let's add some wildcard method to retrieve where genre starts with "Animation"
-2. add a method findByGenreStartsWith to *_MovieRepository_*
+2. add a method findByGenreStartsWith to **_MovieRepository_**
 ```java
 List<Movie> findByGenreStartsWith(String genre);
 ---------------------------------------------------------------------
@@ -220,16 +217,17 @@ System.out.println("Movies found with findByGenreStartsWith('Animation'");
 System.out.println("---------------------------");
 movieRepository.findByGenreStartsWith("Animation").forEach(genres -> System.out.println(genres));
 ```
-4. from project root directory, run `mvn sprint-boot:run` +
-isn't this just awesome, only need to add a single method to expose the data
+4. from project root directory, run `mvn sprint-boot:run`
 
-no longer embedding queries to my datastore
+**_isn't this just awesome, only need to add a single method to expose the data_**
 
-no longer handling JDBC connections or JDBCTemplate or EntityMangerFactories
+**_no longer embedding queries to my datastore_**
 
-no longer using @NamedQueries
+**_no longer handling JDBC connections or JDBCTemplate or EntityMangerFactories_**
 
-no longer using prepared statements
+**_no longer using @NamedQueries_**
+
+**_no longer using prepared statements_**
 
 # extra credit
 given we can use methods on the *_MovieRepository_* to retrieve data what other ways can you query for wildcards + 
