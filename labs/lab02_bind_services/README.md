@@ -51,7 +51,7 @@ Creating service spring-music-db in org test / space dev as phopper@pivotal.io..
 OK
 ```
 
-2. Next we'll _bind_ the newly created instance to our **spring-music** application:
+2. Next we'll _bind_ the newly created instance to our **_spring-music_**** application:
 ```
 $ cf bind-service spring-music spring-music-db
 Binding service spring-music-db to app spring-music in org oreilly-class / space instructor as cbusch@pivotal.io...
@@ -59,12 +59,12 @@ OK
 TIP: Use 'cf restage' to ensure your env variable changes take effect
 ```
 
-3. Notice the admonition to **Use 'cf restage' to ensure your env variable changes take effect**.
+3. Notice the admonition to **_Use 'cf restage' to ensure your env variable changes take effect_**.
 Let's take a look at the environment variables for our application to see what's been done. We can do this by typing:
 ```
 $ cf env spring-music
 ```
-The subset of the output we're interested in is located near the very top, titled **System-Provided**:
+The subset of the output we're interested in is located near the very top, titled **_System-Provided_**:
 ```
 {
  "VCAP_SERVICES": {
@@ -120,7 +120,7 @@ The subset of the output we're interested in is located near the very top, title
 }
 ```
 1) **_VCAP_SERVICES_** is a special Cloud Foundry environment variable that contains a JSON document containing all of the information for any services bound to an application.
-2) Notice here the unique URI for this instance of **p-mysql** MySQL that **spring-music** has been bound to.
+2) Notice here the unique URI for this instance of **_p-mysql_** MySQL that **_spring-music**** has been bound to.
 
 4. Now let's _restage_ the application, which cycles our application back through the staging/buildpack process before redeploying the application.footnote:[In this case, we could accomplish the same goal by only _restarting_ the application via `cf restart spring-music`.
 A _restage_ is generally recommended because Cloud Foundry buildpacks also have access to injected environment variables and can install or configure things differently based on their values.]
@@ -130,13 +130,13 @@ $ cf restage spring-music
 Once the application is running again, revisit or refresh the browser tab where you have the _Spring Music_ application loaded:
 ![](../../Common/images/Spring-Music-with-Services.png)
 
-As you can see from the information dialog, the application is now utilizing a MySQL database via the **spring-music-db** service.
+As you can see from the information dialog, the application is now utilizing a MySQL database via the **_spring-music-db_** service.
 
 ## Clean Up
 
 Since we're done using the spring-music application, let's clean up our application and services to make room for future labs.
 
-1. Delete the **spring-music** application:
+1. Delete the **_spring-music_** application:
 ```
 $ cf delete spring-music
 
@@ -144,7 +144,7 @@ Really delete the app spring-music?> y
 Deleting app spring-music in org oreilly-class / space instructor as cbusch@pivotal.io...
 OK
 ```
-2. Delete the **spring-music-db** service:
+2. Delete the **_spring-music-db_** service:
 ```
 $ cf delete-service spring-music-db
 
