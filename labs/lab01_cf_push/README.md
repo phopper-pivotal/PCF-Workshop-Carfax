@@ -28,7 +28,7 @@ $ cf push
 You should see output similar to the following listing. Take a look at the listing callouts for a play-by-play of what's happening:
 
 ```
-Using manifest file /Users/pivotal/cbusch/stl-cloud-native-spring-workshop/session_02/lab_01/spring-music/manifest.yml <1>
+Using manifest file /Users/pivotal/phopper/PCF-Workshop-Carfax/apps/spring-music/manifest.yml <1>
 
 Creating app spring-music in org test / space dev as phopper@pivotal.io...
 OK <2>
