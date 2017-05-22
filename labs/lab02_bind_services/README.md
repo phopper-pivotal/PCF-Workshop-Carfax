@@ -43,7 +43,7 @@ and you'll see the same service/plan/description listing in the browser:
 
 ## Creating and Binding to a Service Instance
 
-* Let's begin by creating a MySQL instance using the ClearDB MySQL Database service broker.
+1. Let's begin by creating a MySQL instance using the ClearDB MySQL Database service broker.
 From the CLI, let's _create_ a developer instance:
 ```
 $ cf create-service cleardb spark spring-music-db
@@ -55,7 +55,7 @@ Or, if you are using FNTS or PEZ [see Environments](../../Common/env_info.md[see
 $ cf create-service p-mysql 100mb-dev spring-music-db
 ```
 
-* Next we'll _bind_ the newly created instance to our `spring-music` application:
+2. Next we'll _bind_ the newly created instance to our `spring-music` application:
 ```
 $ cf bind-service spring-music spring-music-db
 Binding service spring-music-db to app spring-music in org oreilly-class / space instructor as cbusch@pivotal.io...
@@ -63,7 +63,7 @@ OK
 TIP: Use 'cf restage' to ensure your env variable changes take effect
 ```
 
-* Notice the admonition to `Use 'cf restage' to ensure your env variable changes take effect`.
+3. Notice the admonition to `Use 'cf restage' to ensure your env variable changes take effect`.
 Let's take a look at the environment variables for our application to see what's been done. We can do this by typing:
 ```
 $ cf env spring-music
@@ -107,7 +107,7 @@ System-Provided:
 1) `VCAP_SERVICES` is a special Cloud Foundry environment variable that contains a JSON document containing all of the information for any services bound to an application.
 2) Notice here the unique URI for this instance of `cleardb` MySQL that `spring-music` has been bound to.
 
-* Now let's _restage_ the application, which cycles our application back through the staging/buildpack process before redeploying the application.footnote:[In this case, we could accomplish the same goal by only _restarting_ the application via `cf restart spring-music`.
+4. Now let's _restage_ the application, which cycles our application back through the staging/buildpack process before redeploying the application.footnote:[In this case, we could accomplish the same goal by only _restarting_ the application via `cf restart spring-music`.
 A _restage_ is generally recommended because Cloud Foundry buildpacks also have access to injected environment variables and can install or configure things differently based on their values.]
 ```
 $ cf restage spring-music
@@ -121,7 +121,7 @@ As you can see from the information dialog, the application is now utilizing a M
 
 Since we're done using the spring-music application, let's clean up our application and services to make room for future labs.
 
-* Delete the `spring-music` application:
+1. Delete the `spring-music` application:
 ```
 $ cf delete spring-music
 
@@ -129,7 +129,7 @@ Really delete the app spring-music?> y
 Deleting app spring-music in org oreilly-class / space instructor as cbusch@pivotal.io...
 OK
 ```
-* Delete the `spring-music-db` service:
+2. Delete the `spring-music-db` service:
 ```
 $ cf delete-service spring-music-db
 
