@@ -1,12 +1,12 @@
 # Spring Boot Actuator
 
 ## pick up where we left off
-1. navigate to your project from lab 1
+1. navigate to your project from lab 4
    * alternatively, you can go to start.spring.io and
-   * go through all the steps from lab 1
+   * go through all the steps from lab 4
    * when you specify dependencies, add `actuator` and `HATEOAS`
 ![](lab2_boot.png)
-2. assuming, you don't want to repeat yourself, open the pom.xml from lab 1
+2. assuming, you don't want to repeat yourself, open the pom.xml from lab 4
 3. add the following 2 dependencies
 ```xml
 <dependency>
@@ -30,7 +30,9 @@
 3. visit http://localhost:8080/actuator
 4. follow the various links
 5. if you don't have the _JSONView_ chrome extension or something similar, consider installing it
-6. there is some [documentation](http://docs.spring.io/spring-boot/docs/current/reference/html/production-ready-endpoints.html) of the endpoints
+6. alternatively
+`curl http://localhost:8080/actuator`
+7. there is some [Production Ready Endpoints](http://docs.spring.io/spring-boot/docs/current/reference/html/production-ready-endpoints.html) of the endpoints
 
 ## cf push
 1. repackage `./mvnw clean package`
@@ -51,4 +53,4 @@
 
 [Course Materials home](../../README.md#course-materials)
 
-[Lab 5 - Spring Data REST](../lab06_spring_data_rest/README.md)
+[Lab 6 - Spring Data REST](../lab06_spring_data_rest/README.md)
