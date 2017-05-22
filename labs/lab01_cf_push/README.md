@@ -89,11 +89,11 @@ Here the CLI is creating a route with random word tokens inserted (again, see `m
 4. Now the CLI is _binding_ the created route to the application.
 Routes can actually be bound to multiple applications to support techniques such as blue-green deployments.
 5. The CLI finally uploads the application bits to PWS. Notice that it's uploading _90 files_! This is because Cloud Foundry actually explodes a ZIP artifact before uploading it for caching purposes.
-6. Now we begin the staging process. The (https://github.com/cloudfoundry/java-buildpack)[Java Buildpack] is responsible for assembling the runtime components necessary to run the application.
+6. Now we begin the staging process. The [Java Buildpack](https://github.com/cloudfoundry/java-buildpack) is responsible for assembling the runtime components necessary to run the application.
 7. Here we see the version of the JRE that has been chosen and installed.
 8. And here we see the version of Tomcat that has been chosen and installed.
 9. The complete package of your application and all of its necessary runtime components is called a _droplet_.
-Here the droplet is being uploaded to PWS's internal blobstore so that it can be easily copied to one or more _(https://docs.cloudfoundry.org/concepts/diego/diego-architecture.html)[Diego]_ for execution.
+Here the droplet is being uploaded to PWS's internal blobstore so that it can be easily copied to one or more _[Diego](https://docs.cloudfoundry.org/concepts/diego/diego-architecture.html)_ for execution.
 10. The CLI tells you exactly what command and argument set was used to start your application.
 11. Finally the CLI reports the current status of your application's health.
 You can get the same output at any time by typing `cf app spring-music`
@@ -107,4 +107,4 @@ It will become important in the next lab!
 
 [Course Materials home](README.md#course-materials)
 
-[Lab 2 - Binding to Cloud Foundry Services(/session_02/lab_02/lab_02.adoc)
+[Lab 2 - Binding to Cloud Foundry Services](/session_02/lab_02/lab_02.adoc)
