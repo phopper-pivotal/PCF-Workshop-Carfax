@@ -8,7 +8,7 @@
 
 1. Change to the **_cf-scale-boot_** sample application directory:
 ```
-$ cd $COURSE_HOME/session_02/lab_03/cf-scale-boot
+$ cd $COURSE_HOME/apps/cf-scale-boot
 ```
 
 2. Spring Boot CLI applications do not require a separate build step, so go ahead and push the application:
@@ -16,8 +16,7 @@ $ cd $COURSE_HOME/session_02/lab_03/cf-scale-boot
 $ cf push
 ```
 
-3. Once again, this application's manifest is configured to have a random route assigned to the application.
-So, when the CLI indicates that application is up and running, visit its route in the browser:
+3. Once again, this application's manifest is configured to have a random route assigned to the application. So, when the CLI indicates that application is up and running, visit its route in the browser:
 ![](../../Common/images/cf-scale-boot-initial.png)
 
 You'll see that the application is reporting various bits of information that it has discovered from its environment.
@@ -44,7 +43,7 @@ OK
 requested state: started
 instances: 5/5
 usage: 512M x 5 instances
-urls: cf-scale-boot-stockinged-rust.cfapps.io
+urls: cf-scale-boot-arcifinious-wolver.apps.pcf-apps.net
 last uploaded: Fri Feb 13 18:56:29 UTC 2015
 
      state      since                    cpu    memory           disk
@@ -67,7 +66,7 @@ OK
 requested state: started
 instances: 5/5
 usage: 512M x 5 instances
-urls: cf-scale-boot-stockinged-rust.cfapps.io
+urls: cf-scale-boot-arcifinious-wolver.apps.pcf-apps.net
 last uploaded: Fri Feb 13 18:56:29 UTC 2015
 
      state     since                    cpu    memory           disk
@@ -103,7 +102,7 @@ OK
 requested state: started
 instances: 1/1
 usage: 512M x 1 instances
-urls: cf-scale-boot-stockinged-rust.apps.pcf-apps.net
+urls: cf-scale-boot-arcifinious-wolver.apps.pcf-apps.net
 last uploaded: Fri Feb 13 18:56:29 UTC 2015
 
      state     since                    cpu    memory         disk
@@ -114,7 +113,7 @@ As you can see, we're back down to only one instance running, and it is in fact 
 
 3. Confirm that by again revisiting the route in the browser and checking the instance index and request counter:
 
-![])../../Common/images/cf-scale-boot-unscaled.png)
+![](../../Common/images/cf-scale-boot-unscaled.png)
 
 [Course Materials home](README.md#course-materials)
 [Lab 4 - Monitoring Applications](../lab04_spring_boot/README.md)
