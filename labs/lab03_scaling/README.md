@@ -115,6 +115,6 @@ As you can see, we're back down to only one instance running, and it is in fact 
 
 ![](../../Common/images/cf-scale-boot-initial.png)
 
-[Course Materials home](README.md#course-materials)
+[Course Materials home](../../README.md#course-materials)
 
 [Lab 4 - Monitoring Applications](../lab04_spring_boot/README.md)
