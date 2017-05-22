@@ -18,7 +18,7 @@
    * annotate the class with `@RestController` (package: `org.springframework.web.bind.annotation`)
    * create method: `public String sayHello() { return "Hello Carfax"; }`
    * annotate the method with: `@RequestMapping("/")` (package: `org.springframework.web.bind.annotation`)
-   * Your source should look something like this:
+   * your source should look something like this:
 ```java
  package bootworkshop.pivotal.io;
 
@@ -45,7 +45,7 @@
 11. bask in the glory that is Spring Boot
 
 ## push to Pivotal Cloud Foundry
-1. make sure you have all of your [prerequisites](https://github.com/phopper-pivotal/PCF-Workshop-Carfax/README.md#pre-requisites) in place.
+1. make sure you have all of your [prerequisites](https://github.com/phopper-pivotal/PCF-Workshop-Carfax/#pre-requisites) in place.
 2. build a runnable jar `./mvnw package`
 3. log in to cloud foundry `cf login -a api.yourpcfsystem.com`
 4. when prompted, provide your email and password
