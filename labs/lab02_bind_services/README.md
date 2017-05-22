@@ -31,9 +31,9 @@ $ cf marketplace
 and you'll get a list of services, their available plans, and descriptions.
 
 The second way is specific to Pivotal Cloud Foundry's Application Manager UI.
-If you haven't already, login to it by visiting [Pivotal Web Services](https://run.pivotal.io)
+If you haven't already, login to it by visiting [Pivotal Apps Manager](https://apps.system.pcf-apps.net/)
 
-Click on the ``Marketplace'' link:
+Click on the `Marketplace` link:
 
 ![](/../../Common/images/PWS_AM_InstructorSpace.png)
 
