@@ -229,6 +229,29 @@ movieRepository.findByGenreStartsWith("Animation").forEach(genres -> System.out.
 
 **_no longer using prepared statements_**
 
+# cf push
+1. let's create a manifest.yml at the top level of your project
+```yml
+---
+applications:
+- name: hello
+  buildpack: java_buildpack
+  host: hello-${random-word}
+  path: target/hello-0.0.1-SNAPSHOT.jar
+```
+2. `cf push`
+
+3. `cf apps` will show you all the deployed apps in your space along with their vital stats and mapped routes.  Notice the random words from the manifest file.
+```
+$ cf apps
+Getting apps in org Vertical / space rhardt-sandbox as rhardt@pivotal.io...
+OK
+
+name                  requested state   instances   memory   disk   urls
+hello                 started           1/1         1G       1G     hello-unscaled-multimillion.cfapps.io
+```
+4. verify your app at its new randomly-generated route
+
 # extra credit
 given we can use methods on the *_MovieRepository_* to retrieve data what other ways can you query for wildcards + 
 
