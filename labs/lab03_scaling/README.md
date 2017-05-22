@@ -113,7 +113,7 @@ As you can see, we're back down to only one instance running, and it is in fact 
 
 3. Confirm that by again revisiting the route in the browser and checking the instance index and request counter:
 
-![](../../Common/images/cf-scale-boot-unscaled.png)
+![](../../Common/images/cf-scale-boot-initial.png)
 
 [Course Materials home](README.md#course-materials)
 [Lab 4 - Monitoring Applications](../lab04_spring_boot/README.md)
