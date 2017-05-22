@@ -94,4 +94,4 @@ applications:
 
 [Course Materials home](../../README.md#course-materials)
 
-[Lab 8 - Spring propertiues(../lab08_spring_properties/README.md)
+[Lab 8 - Spring properties](../lab08_spring_properties/README.md)
