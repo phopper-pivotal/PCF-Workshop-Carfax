@@ -2,8 +2,7 @@
 
 ## run locally
 1. visit link:http://start.spring.io[start.spring.io]
-+
-image::lab1_boot.png[]
+![](../../Common/imageslab1_boot.png)
 2. configure your project
   * group name
   * artifact name (*_'hello'_* is recommended)
