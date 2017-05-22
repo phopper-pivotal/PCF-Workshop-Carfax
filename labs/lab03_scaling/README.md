@@ -11,12 +11,12 @@
 $ cd $COURSE_HOME/session_02/lab_03/cf-scale-boot
 ```
 
-1. Spring Boot CLI applications do not require a separate build step, so go ahead and push the application:
+2. Spring Boot CLI applications do not require a separate build step, so go ahead and push the application:
 ```
 $ cf push
 ```
 
-1. Once again, this application's manifest is configured to have a random route assigned to the application.
+3. Once again, this application's manifest is configured to have a random route assigned to the application.
 So, when the CLI indicates that application is up and running, visit its route in the browser:
 ![](../../Common/images/cf-scale-boot-initial.png)
 
@@ -35,7 +35,7 @@ OK
 
 In reporting `OK`, the CLI is letting you know that the additional requested instances have been started, but they are not yet necessarily running.
 
-1. We can determine how many instances are actually running like this:
+2. We can determine how many instances are actually running like this:
 ```
 $ cf app cf-scale-boot
 Showing health and status for app cf-scale-boot in org oreilly-class / space instructor as cbusch@pivotal.io...
@@ -55,10 +55,10 @@ last uploaded: Fri Feb 13 18:56:29 UTC 2015
 #4   starting   2015-02-13 03:04:33 PM   0.0%   0 of 0           0 of 0
 ```
 
-<1> This application instance has completed the startup process and is actually able to accept requests.
-<2> This application instance is still starting and will not have any requests routed to it.
+* This application instance has completed the startup process and is actually able to accept requests.
+* This application instance is still starting and will not have any requests routed to it.
 
-1. Eventually all instances will converge to a running state:
+3. Eventually all instances will converge to a running state:
 ```
 $ cf app cf-scale-boot
 Showing health and status for app cf-scale-boot in org oreilly-class / space instructor as cbusch@pivotal.io...
@@ -78,7 +78,7 @@ last uploaded: Fri Feb 13 18:56:29 UTC 2015
 #4   running   2015-02-13 03:04:52 PM   0.1%   393.4M of 512M   128.9M of 1G
 ```
 
-1. Revisit the application route in the browser.
+4. Revisit the application route in the browser.
 Refresh several times.
 You should observe the instance index and request counters changing as you do so:
 ![](../../Common/images/cf-scale-boot-scaled.png[])
@@ -97,7 +97,7 @@ Scaling app cf-scale-boot in org oreilly-class / space instructor as cbusch@pivo
 OK
 ```
 
-1. Check the application status again:
+2. Check the application status again:
 ```
 $ cf app cf-scale-boot
 Showing health and status for app cf-scale-boot in org oreilly-class / space instructor as cbusch@pivotal.io...
@@ -115,7 +115,7 @@ last uploaded: Fri Feb 13 18:56:29 UTC 2015
 
 As you can see, we're back down to only one instance running, and it is in fact the original index 0 that we started with.
 
-1. Confirm that by again revisiting the route in the browser and checking the instance index and request counter:
+3. Confirm that by again revisiting the route in the browser and checking the instance index and request counter:
 
 ![])../../Common/images/cf-scale-boot-unscaled.png)
 
