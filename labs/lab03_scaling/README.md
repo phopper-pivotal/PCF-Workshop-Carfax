@@ -80,7 +80,7 @@ last uploaded: Fri Feb 13 18:56:29 UTC 2015
 4. Revisit the application route in the browser.
 Refresh several times.
 You should observe the instance index and request counters changing as you do so:
-![](../../Common/images/cf-scale-boot-scaled.png[])
+![](../../Common/images/cf-scale-boot-scaled.png)
 
 The aforementioned (Go)Router is applying a random routing algorithm to all of the application instances assigned to this route. As an instance reaches the **_running_** state, its [Diego](https://docs.cloudfoundry.org/concepts/diego/diego-architecture.html) registers that instance in the routing table assigned to its route by sending a message to Cloud Foundry's message bus. All (Go)Router instances are subscribed to this channel and register the routes independently. This makes for very dynamic and rapid reconfiguration!
 
