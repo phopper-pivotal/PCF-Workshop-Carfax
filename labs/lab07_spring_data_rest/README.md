@@ -1,6 +1,6 @@
 # Spring Data REST
 
-## part 1: we need Spring Boot's starter for Data REST
+## we need Spring Boot's starter for Data REST
 1. navigate to your project from lab 4
 2. open the `pom.xml` from lab 4
 3. add the following dependency
