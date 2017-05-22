@@ -20,8 +20,8 @@
 8. open pom.xml - what starters are there?
 9. create package io.pivotal.domain
 10. create class *_Movie_*
-   *  add `@Entity` (javax.persistence.Entity) annotation to class
-   *  add attributes 
+    *  add `@Entity` (javax.persistence.Entity) annotation to class
+    *  add attributes 
        *  title
        *  year
        * rated
