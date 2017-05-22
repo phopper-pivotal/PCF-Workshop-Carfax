@@ -2,9 +2,7 @@
 
 > The _Spring Music_ application was designed to illustrate the ease with which various types of data services can be bound to and utilized by Spring applications running on Cloud Foundry.
 In this lab, we'll be binding the application to a ClearDB MySQL database.
-
 > Cloud Foundry services are managed through two primary types of operations:
-
 > Create/Delete:: These operations create or delete instances of a service.
 > For a database this could mean creating/deleting a schema in an existing multitenant cluster or creating/deleting a dedicated database cluster.
 > Bind/Unbind:: These operations create or delete unique credential sets for an existing service instance that can then be injected into the environment of an application instance.
