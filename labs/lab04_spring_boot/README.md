@@ -1,7 +1,7 @@
 # Lab 1: Spring Boot Basics
 
 ## run locally
-1. visit link:http://start.spring.io[start.spring.io]
+1. visit [Spring Initializer](http://start.spring.io[start.spring.io)
 ![](../../Common/imageslab1_boot.png)
 2. configure your project
    * group name
@@ -45,7 +45,7 @@
 11. bask in the glory that is Spring Boot
 
 ## push to Pivotal Cloud Foundry
-1. make sure you have all of your link:/Spring-Workshop-Dish/pre-requisites/Spring_Boot_Labs_Setup.html[prerequisites] in place.
+1. make sure you have all of your [prerequisites](PCF-Workshop-Carfax#pre-requisites) in place.
 2. build a runnable jar `./mvnw package`
 3. log in to cloud foundry `cf login -a api.yourpcfsystem.com`
 4. when prompted, provide your email and password
