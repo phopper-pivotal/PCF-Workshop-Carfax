@@ -119,10 +119,10 @@ The subset of the output we're interested in is located near the very top, title
  }
 }
 ```
-1) **_VCAP_SERVICES_** is a special Cloud Foundry environment variable that contains a JSON document containing all of the information for any services bound to an application.
-2) Notice here the unique URI for this instance of **_p-mysql_** MySQL that **_spring-music_** has been bound to.
+1. **_VCAP_SERVICES_** is a special Cloud Foundry environment variable that contains a JSON document containing all of the information for any services bound to an application.
+2. Notice here the unique URI for this instance of **_p-mysql_** MySQL that **_spring-music_** has been bound to.
 
-4. Now let's _restage_ the application, which cycles our application back through the staging/buildpack process before redeploying the application.footnote:[In this case, we could accomplish the same goal by only _restarting_ the application via `cf restart spring-music`.
+3. Now let's _restage_ the application, which cycles our application back through the staging/buildpack process before redeploying the application.footnote:[In this case, we could accomplish the same goal by only _restarting_ the application via `cf restart spring-music`.
 A _restage_ is generally recommended because Cloud Foundry buildpacks also have access to injected environment variables and can install or configure things differently based on their values.]
 ```
 $ cf restage spring-music
