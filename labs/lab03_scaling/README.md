@@ -117,4 +117,4 @@ As you can see, we're back down to only one instance running, and it is in fact 
 
 [Course Materials home](../../README.md#course-materials)
 
-[Lab 4 - Monitoring Applications](../lab04_spring_boot/README.md)
+[Lab 4 - Spring Boot Primer](../lab04_spring_boot/README.md)

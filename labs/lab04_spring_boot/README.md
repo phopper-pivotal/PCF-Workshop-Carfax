@@ -1,4 +1,4 @@
-# Lab 1: Spring Boot Basics
+# Spring Boot Basics
 
 ## run locally
 1. visit [Spring Initializer](http://start.spring.io)

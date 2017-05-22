@@ -1,4 +1,4 @@
-# Lab 2: Spring Boot Actuator
+# Spring Boot Actuator
 
 ## pick up where we left off
 1. navigate to your project from lab 1
@@ -43,11 +43,12 @@
 6. in the instance section of the app, in App Manager, expand the ">" to see the `/health` JSON
 
 ## extra credit
-1. Your company uses routers manufactured with recycled electronics from Russian submarines.  As a result, they you need to provide a custom health message that includes: 'положение_дел:вверх' in your `/health` endpoint to route requests properly.  Refer to http://www.baeldung.com/spring-boot-actuators
-2. When certain requests come in, your app spins out of control  Your support team is asking for thread and heap dumps.  Can you provide them without logging into the server and running commands from a shell?
-3. Support would also like to see a dump of the last N requests to come in.
-4. They would also like self-service access to the app's overall health when it isn't spinning out of control,  What can you give them?
-5. You think you might have left the "SPIN_OUT_OF_CONTROL_WHEN_CAT_VIDEOS_ARE_REQUSTED" environment variable set to true.  How can you validate the apps environment variables?
-6. the /greeting endpoint doesn't seem to be mapped.  How can we determine all the endpoint mappings?
+1. When certain requests come in, your app spins out of control.  Your support team is asking for thread and heap dumps.  Can you provide them without logging into the server and running commands from a shell?
+2. Support would also like to see a dump of the last N requests to come in.
+3. They would also like self-service access to the app's overall health when it isn't spinning out of control. What can you give them?
+4. You think you might have left the "SPIN_OUT_OF_CONTROL_WHEN_CAT_VIDEOS_ARE_REQUSTED" environment variable set to true.  How can you validate the apps environment variables?
+5. The /greeting endpoint doesn't seem to be mapped.  How can we determine all the endpoint mappings?
 
+[Course Materials home](../../README.md#course-materials)
 
+[Lab 5 - Spring Data REST](../lab06_spring_data_rest/README.md)
