@@ -24,22 +24,16 @@
     *  add attributes 
        *  title
        *  year
-       * rated
+       *  rated
        *  released
        *  runtime
        *  genre
-       * add an attribute, generated value for movie identifier
-```java
-@Id
-@GeneratedValue
-private long id;
-```
-
-   *  use IDE to generate getter/setter methods
-   *  use IDE to generate a default constructor void of and attributes as arguments
-   *  use IDE to generate a constructor that takes all attributes as arguments
-   *  use IDE to generate a toString method
-       *  your code should look something like this
+       * add an attribute, generated value for movie identifier (see example below)
+    *  use IDE to generate getter/setter methods
+    *  use IDE to generate a default constructor void of and attributes as arguments
+    *  use IDE to generate a constructor that takes all attributes as arguments
+    *  use IDE to generate a toString method
+       *  your code should look something like this       
 ```java
 package io.pivotal.domain;
 
