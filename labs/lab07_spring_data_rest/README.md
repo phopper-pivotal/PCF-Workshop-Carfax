@@ -1,8 +1,8 @@
 # Spring Data REST
 
 ## we need Spring Boot's starter for Data REST
-1. navigate to your project from lab 4
-2. open the `pom.xml` from lab 4
+1. navigate to your project from lab 6
+2. open the `pom.xml` from lab 46
 3. add the following dependency
 ```xml
     <groupId>org.springframework.boot</groupId>
@@ -11,8 +11,8 @@
 
 ## expose our MovieRepository
 1. add `@RepositoryRestResource` annotation to **_MovieRepository_**
-   * add attribute `collectionResourceRel # "movies"` to @RepositoryRestResource annotation
-   * add attribute `path # "movies"` to @RepositoryRestResource annotation
+   * add attribute `collectionResourceRel = "movies"` to @RepositoryRestResource annotation
+   * add attribute `path = "movies"` to @RepositoryRestResource annotation
 2. stop your previous version if it is still running
 3. `./mvnw spring-boot:run`
 4. visit http://localhost:8080/movies
@@ -56,7 +56,7 @@ import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.data.repository.query.Param;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
-@RepositoryRestResource(collectionResourceRel # "movies", path # "movies")
+@RepositoryRestResource(collectionResourceRel = "movies", path = "movies")
 public interface MovieRepository extends PagingAndSortingRepository<Movie, Long> {
 
     Page<Movie> findByTitle(@Param("title") String title, Pageable pageable);

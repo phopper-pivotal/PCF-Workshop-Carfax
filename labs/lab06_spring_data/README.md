@@ -59,12 +59,12 @@ public class Movie implements Serializable {
     public Movie() {}
 
     public Movie(String title, String year, String rated, String released, String runtime, String genre) {
-        this.title # title;
-        this.year # year;
-        this.rated # rated;
-        this.released # released;
-        this.runtime # runtime;
-        this.genre # genre;
+        this.title = title;
+        this.year = year;
+        this.rated = rated;
+        this.released = released;
+        this.runtime = runtime;
+        this.genre = genre;
     }    
 
     public long getId() {
@@ -72,7 +72,7 @@ public class Movie implements Serializable {
     }
 
     public void setId(long id) {
-        this.id # id;
+        this.id = id;
     }
 
     public String getTitle() {
@@ -80,7 +80,7 @@ public class Movie implements Serializable {
     }
 
     public void setTitle(String title) {
-        this.title # title;
+        this.title = title;
     }
 
     public String getYear() {
@@ -88,7 +88,7 @@ public class Movie implements Serializable {
     }
 
     public void setYear(String year) {
-        this.year # year;
+        this.year = year;
     }
 
     public String getRated() {
@@ -96,7 +96,7 @@ public class Movie implements Serializable {
     }
 
     public void setRated(String rated) {
-        this.rated # rated;
+        this.rated = rated;
     }
 
     public String getReleased() {
@@ -104,7 +104,7 @@ public class Movie implements Serializable {
     }
 
     public void setReleased(String released) {
-        this.released # released;
+        this.released = released;
     }
 
     public String getRuntime() {
@@ -112,7 +112,7 @@ public class Movie implements Serializable {
     }
 
     public void setRuntime(String runtime) {
-        this.runtime # runtime;
+        this.runtime = runtime;
     }
 
     public String getGenre() {
@@ -120,7 +120,7 @@ public class Movie implements Serializable {
     }
 
     public void setGenre(String genre) {
-        this.genre # genre;
+        this.genre = genre;
     }
 
     @Override
@@ -168,7 +168,7 @@ public class Movie implements Serializable {
             // fetch one movie
             System.out.println("Movies found with findOne()");
             System.out.println("---------------------------");
-            Movie movie # movieRepository.findOne(1L);
+            Movie movie = movieRepository.findOne(1L);
 
 
             // fetch movies by title
