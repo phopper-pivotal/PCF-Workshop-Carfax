@@ -45,7 +45,7 @@
 11. bask in the glory that is Spring Boot
 
 ## push to Pivotal Cloud Foundry
-1. make sure you have all of your [prerequisites](PCF-Workshop-Carfax#pre-requisites) in place.
+1. make sure you have all of your [prerequisites](../../PCF-Workshop-Carfax#pre-requisites) in place.
 2. build a runnable jar `./mvnw package`
 3. log in to cloud foundry `cf login -a api.yourpcfsystem.com`
 4. when prompted, provide your email and password
@@ -110,3 +110,7 @@ class Greeting {
 ```
 5. now `cf push` and visit http://hello-random-words.yourhost.com/greeting
 6. marvel at your newfound speed and productivity
+
+[Course Materials home](../../README.md#course-materials)
+
+[Lab 5 - Monitoring Applications](../lab05_spring_actuator/README.md)
