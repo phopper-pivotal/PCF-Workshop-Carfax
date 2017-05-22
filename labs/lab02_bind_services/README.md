@@ -67,7 +67,6 @@ TIP: Use 'cf restage' to ensure your env variable changes take effect
 Let's take a look at the environment variables for our application to see what's been done. We can do this by typing:
 ```
 $ cf env spring-music
-----
 ```
 The subset of the output we're interested in is located near the very top, titled `System-Provided`:
 ```
@@ -139,6 +138,6 @@ Deleting service spring-music-db in org oreilly-class / space instructor as cbus
 OK
 ```
 
-[Course Materials home](README.md#course-materials)
+[Course Materials home](../../README.md#course-materials)
 
-[Lab 3 - Scaling Applications](/session_02/lab_03/lab_03.adoc)
+[Lab 3 - Scaling Applications](../../labs/lab_03.adoc)
