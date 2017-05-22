@@ -77,20 +77,11 @@ public interface MovieRepository extends PagingAndSortingRepository<Movie, Long>
 ## cf push
 
 1. repackage `./mvnw clean package`
-2. create manifest.yml - be sure to change **_<your cf login>_** to that of your PCF login name
-```yml
----
-applications:
-- name: watching-${random-word}
-  buildpack: java_buildpack
-  host: hello-$<your cf login>
-  path: target/watching-0.0.1-SNAPSHOT.jar
-```
-3. push your app:  `cf push`
-4. let's verify our changes
-5. visit http://hello-your-random.yoursite.com/movies
-6. visit http://hello-your-random.yoursite.com/movies/search/findByTitle?title#Minions
-7. visit http://hello-your-random.yoursite.com/movies/search/findByGenreStartsWith?genre#Animation&sort#year
+2. push your app:  `cf push`
+3. let's verify our changes
+4. visit http://hello-your-random.yoursite.com/movies
+5. visit http://hello-your-random.yoursite.com/movies/search/findByTitle?title#Minions
+6. visit http://hello-your-random.yoursite.com/movies/search/findByGenreStartsWith?genre#Animation&sort#year
 
 [Course Materials home](../../README.md#course-materials)
 
