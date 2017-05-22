@@ -107,4 +107,4 @@ It will become important in the next lab!
 
 [Course Materials home](README.md#course-materials)
 
-[Lab 2 - Binding to Cloud Foundry Services](/session_02/lab_02/lab_02.adoc)
+[Lab 2 - Binding to Cloud Foundry Services](../lab02_bind_services/README.md)
