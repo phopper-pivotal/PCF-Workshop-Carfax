@@ -128,7 +128,7 @@ A _restage_ is generally recommended because Cloud Foundry buildpacks also have 
 $ cf restage spring-music
 ```
 Once the application is running again, revisit or refresh the browser tab where you have the _Spring Music_ application loaded:
-![](/../../Common/images/Spring-Music-with-Services.png)
+![](../../Common/images/Spring-Music-with-Services.png)
 
 As you can see from the information dialog, the application is now utilizing a MySQL database via the `spring-music-db` service.
 
