@@ -115,7 +115,9 @@ The subset of the output we're interested in is located near the very top, title
    "spring-music-chondromatous-hydrographer.apps.pcf-apps.net"
   ],
   "users": null,
-  "versio
+  "version": "279a4d9b-7714-4970-9735-9291522de2fd"
+ }
+}
 ```
 1) `VCAP_SERVICES` is a special Cloud Foundry environment variable that contains a JSON document containing all of the information for any services bound to an application.
 2) Notice here the unique URI for this instance of `p-mysql` MySQL that `spring-music` has been bound to.
