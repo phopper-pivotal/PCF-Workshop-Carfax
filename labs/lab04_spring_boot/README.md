@@ -1,6 +1,6 @@
 # Lab 1: Spring Boot Basics
 
-## part 1: run locally
+## run locally
 1. visit link:http://start.spring.io[start.spring.io]
 +
 image::lab1_boot.png[]
@@ -45,7 +45,7 @@ image::lab1_boot.png[]
 10. point a web browser to http://localhost:8080
 11. bask in the glory that is Spring Boot
 
-## part 2: push to Pivotal Cloud Foundry
+## push to Pivotal Cloud Foundry
 1. make sure you have all of your link:/Spring-Workshop-Dish/pre-requisites/Spring_Boot_Labs_Setup.html[prerequisites] in place.
 2. build a runnable jar `./mvnw package`
 3. log in to cloud foundry `cf login -a api.yourpcfsystem.com`
@@ -90,7 +90,7 @@ hello                 started           1/1         1G       1G     hello-rob.cf
 ```
 13. verify your app at its new randomly-generated route
 
-# Part 3: Extra Credit
+# extra credit
 1.  Why `@RestController`?
 2. Allows you to return strings, but also enables some interesting features
 3. Add this class to your HelloController.java file:
