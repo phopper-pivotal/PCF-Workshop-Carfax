@@ -32,7 +32,7 @@
 5. if you don't have the _JSONView_ chrome extension or something similar, consider installing it
 6. alternatively
 `curl http://localhost:8080/actuator`
-7. there is some [Production Ready Endpoints](http://docs.spring.io/spring-boot/docs/current/reference/html/production-ready-endpoints.html) of the endpoints
+7. there are [Production Ready Features](http://docs.spring.io/spring-boot/docs/current/reference/html/production-ready-endpoints.html) of the endpoints
 
 ## cf push
 1. repackage `./mvnw clean package`
