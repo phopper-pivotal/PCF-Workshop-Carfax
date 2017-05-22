@@ -1,6 +1,6 @@
-= Spring Data REST
+# Spring Data REST
 
-== part 1: we need Spring Boot's starter for Data REST
+## part 1: we need Spring Boot's starter for Data REST
 . navigate to your project from lab 4
 . open the `pom.xml` from lab 4
 . add the following dependency
@@ -9,22 +9,22 @@
     <artifactId>spring-boot-starter-data-rest</artifactId>
 ```
 
-== expose our MovieRepository
+## expose our MovieRepository
 1. add `@RepositoryRestResource` annotation to **_MovieRepository_**
-   * add attribute `collectionResourceRel = "movies"` to @RepositoryRestResource annotation
-   * add attribute `path = "movies"` to @RepositoryRestResource annotation
+   * add attribute `collectionResourceRel # "movies"` to @RepositoryRestResource annotation
+   * add attribute `path # "movies"` to @RepositoryRestResource annotation
 2. stop your previous version if it is still running
 3. `./mvnw spring-boot:run`
 4. visit http://localhost:8080/movies
 5. follow the various links
 
-== let their be data
+## let their be data
 1. we can see there's no data
    * POST data to the MovieRepository RESTful service
 `curl -i -X POST -H "Content-Type:application/json" -d '{"title" : "Descpicalble Me", "year" : "2010", "rated" : "PG", "released" : "09 Jul 2010", "runtime" : "95 min" }'  http://localhost:8080/movies/`
 2. visit http://localhost:8080/movies
 
-== open the flood gates
+## open the flood gates
 1. let's preload some data
    * copy labs/lab5/import.sql to src/main/resources
    * stop your previous version if it is still running
@@ -32,17 +32,17 @@
 3. visit http://localhost:8080/movies
 4. follow the various links
 
-==  failed to search for you
+##  failed to search for you
 1. let's fix search, in case you noticed there were errors
-   * visit http://localhost:8080/movies/search/findByTitle?title=Minions
+   * visit http://localhost:8080/movies/search/findByTitle?title#Minions
    * let's modify **_MovieRepository_**
        * add @Param("title") as in `List<Movie> findByTitle(@Param("title") String title);`
        * add @Param ("rated") as in `List<Movie> findByRated(@Param("rated") String rated);`
        * add @Param ("genre") as in `List<Movie> findByGenreStartsWith(@Param("genre") String genre);` 
 2. `./mvnw spring-boot:run`
-3. visit http://localhost:8080/movies/search/findByTitle?title=Minions
+3. visit http://localhost:8080/movies/search/findByTitle?title#Minions
 
-== pagination
+## pagination
 1. let's enable pagination
    * change CrudRepository in **_MovieRepository_** to use PagingAndSortingRepository
    * change return type from List<Movie> to Page<Movie>
@@ -56,7 +56,7 @@ import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.data.repository.query.Param;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
-@RepositoryRestResource(collectionResourceRel = "movies", path = "movies")
+@RepositoryRestResource(collectionResourceRel # "movies", path # "movies")
 public interface MovieRepository extends PagingAndSortingRepository<Movie, Long> {
 
     Page<Movie> findByTitle(@Param("title") String title, Pageable pageable);
@@ -71,10 +71,10 @@ public interface MovieRepository extends PagingAndSortingRepository<Movie, Long>
 2. `./mvnw spring-boot:run`
 3. visit http://localhost:8080/movies/
 4. scroll to bottom of page to see pagination enabled
-5. now visit http://localhost:8080/movies/search/findByGenreStartsWith?genre=Animation&sort=year
+5. now visit http://localhost:8080/movies/search/findByGenreStartsWith?genre#Animation&sort#year
 6. verify sort order by year movie was released
 
-== cf push
+## cf push
 
 1. repackage `./mvnw clean package`
 2. create manifest.yml - be sure to change **_<your cf login>_** to that of your PCF login name
@@ -89,5 +89,5 @@ applications:
 3. push your app:  `cf push`
 4. let's verify our changes
 5. visit http://hello-your-random.yoursite.com/movies
-6. visit http://hello-your-random.yoursite.com/movies/search/findByTitle?title=Minions
-7. visit http://hello-your-random.yoursite.com/movies/search/findByGenreStartsWith?genre=Animation&sort=year
+6. visit http://hello-your-random.yoursite.com/movies/search/findByTitle?title#Minions
+7. visit http://hello-your-random.yoursite.com/movies/search/findByGenreStartsWith?genre#Animation&sort#year
