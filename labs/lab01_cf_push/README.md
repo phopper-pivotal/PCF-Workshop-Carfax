@@ -105,6 +105,6 @@ In the example `cf push` above, the `urls:` section of the application health re
 This gives you important information about the state of the currently running _Spring Music_ instance, including what Spring Profiles are turned on and what Cloud Foundry services are bound.
 It will become important in the next lab!
 
-[Course Materials home](README.md#course-materials)
+[Course Materials home](../../README.md#course-materials)
 
 [Lab 2 - Binding to Cloud Foundry Services](../lab02_bind_services/README.md)
