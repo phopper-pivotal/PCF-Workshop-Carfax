@@ -1,7 +1,7 @@
 # Lab 1: Spring Boot Basics
 
 ## run locally
-1. visit [Spring Initializer](http://start.spring.io[start.spring.io)
+1. visit [Spring Initializer](start.spring.io)
 ![](../../Common/images/lab1_boot.png)
 2. configure your project
    * group name
