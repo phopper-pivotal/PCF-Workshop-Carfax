@@ -40,7 +40,7 @@ Binding spring-music-hippest-shaman.apps.pcf-apps.net to spring-music...
 OK <4>
 
 Uploading spring-music... <5>
-Uploading app files from: /Users/pivotal/cbusch/stl-cloud-native-spring-workshop/session_02/lab_01/spring-music/build/libs/spring-music.war
+Uploading app files from: /Users/pivotal/phopper/PCF-Workshop-Carfax/apps/spring-music/build/libs/spring-music.war
 Uploading 569.7K, 90 files
 Done uploading
 OK
