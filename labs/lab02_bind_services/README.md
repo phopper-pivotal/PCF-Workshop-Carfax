@@ -35,11 +35,11 @@ If you haven't already, login to it by visiting [Pivotal Apps Manager](https://a
 
 Click on the **_Marketplace_** link:
 
-![](/../../Common/images/Marketplace_link.png)
+![](../../Common/images/Marketplace_link.png)
 
 and you'll see the same service/plan/description listing in the browser:
 
-![](../../Common/images/PMarketplace.png)
+![](../../Common/images/Marketplace.png)
 
 ## Creating and Binding to a Service Instance
 
