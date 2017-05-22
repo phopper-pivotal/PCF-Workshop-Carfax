@@ -140,4 +140,4 @@ OK
 
 [Course Materials home](../../README.md#course-materials)
 
-[Lab 3 - Scaling Applications](../lab_03.adoc)
+[Lab 3 - Scaling Applications](../lab03_scaling/README.md)
