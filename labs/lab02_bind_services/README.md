@@ -153,6 +153,6 @@ Deleting service spring-music-db in org oreilly-class / space instructor as cbus
 OK
 ```
 
-[Course Materials home](../../README.md#course-materials)
+[Course Materials home](../../README.md#labs)
 
 [Lab 3 - Scaling Applications](../lab03_scaling/README.md)

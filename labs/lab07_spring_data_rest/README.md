@@ -83,6 +83,6 @@ public interface MovieRepository extends PagingAndSortingRepository<Movie, Long>
 5. visit http://hello-your-random.yoursite.com/movies/search/findByTitle?title#Minions
 6. visit http://hello-your-random.yoursite.com/movies/search/findByGenreStartsWith?genre#Animation&sort#year
 
-[Course Materials home](../../README.md#course-materials)
+[Course Materials home](../../README.md#labs)
 
 [Lab 8 - Spring properties](../lab08_spring_properties/README.md)

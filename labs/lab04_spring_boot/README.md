@@ -111,6 +111,6 @@ class Greeting {
 5. now `cf push` and visit http://hello-random-words.yourhost.com/greeting
 6. marvel at your newfound speed and productivity
 
-[Course Materials home](../../README.md#course-materials)
+[Course Materials home](../../README.md#labs)
 
 [Lab 5 - Monitoring Applications](../lab05_spring_actuator/README.md)

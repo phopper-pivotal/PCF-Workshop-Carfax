@@ -51,6 +51,6 @@
 4. You think you might have left the "SPIN_OUT_OF_CONTROL_WHEN_CAT_VIDEOS_ARE_REQUSTED" environment variable set to true.  How can you validate the apps environment variables?
 5. The /greeting endpoint doesn't seem to be mapped.  How can we determine all the endpoint mappings?
 
-[Course Materials home](../../README.md#course-materials)
+[Course Materials home](../../README.md#labs)
 
 [Lab 6 - Spring Data REST](../lab06_spring_data_rest/README.md)
