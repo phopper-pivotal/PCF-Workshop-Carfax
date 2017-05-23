@@ -5,7 +5,7 @@
 ![](../../Common/images/lab1_boot.png)
 2. configure your project
    * group name (leave as `com.example`)
-   * artifact name (*_'hello'_* is recommended)
+   * artifact name (`hello` is recommended)
    * *_maven_* for your build system
    * spring boot version 1.5.3
 3. add dependencies
@@ -13,7 +13,7 @@
 4. select 'Generate Project'
 5. unzip the downloaded file
 6. open in IDE
-7. open pom.xml - notice the spring starters
+7. open `pom.xml` - notice the spring starters
 8. create class: `HelloController` in same directory as the Boot app class
    * annotate the class with `@RestController` (package: `org.springframework.web.bind.annotation`)
    * create method: `public String sayHello() { return "Hello Carfax"; }`
