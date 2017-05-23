@@ -108,8 +108,9 @@ class Greeting {
         return new Greeting("Hello", "Carfax", true);
     }
 ```
-5. now `cf push` and visit http://hello-random-words.apps.pcf-apps.net/greeting
-6. marvel at your newfound speed and productivity
+5. build a runnable jar `./mvnw package`
+6. now `cf push` and visit http://hello-random-words.apps.pcf-apps.net/greeting
+7. marvel at your newfound speed and productivity
 
 [Course Materials home](../../README.md#labs)
 
