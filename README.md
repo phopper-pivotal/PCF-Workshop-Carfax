@@ -35,15 +35,15 @@ The overwhelming majority of our time will be spent engaging with the technology
 ## Labs
 * Cloud Foundry Basics
   * [Lab 1: From Zero to Pushing Your First Application](labs/lab01_cf_push/README.md)
-  * Binding to Cloud Foundry Services
-  * Scaling Applications
+  * [Lab 2: Binding to Cloud Foundry Services](labs/lab02_bind_services/README.md)
+  * [Lab 3: Scaling Applications](labs/lab03_scaling/README.md)
   * Monitoring Applications
 * Spring
-  * Spring Boot
+  * [Lab 4: Spring Boot](labs/lab04_spring_boot/README.md)
+  * [Lab 5: Spring Actuator](labs/lab05_spring_actuator/README.md)
+  * [Lab 6: Spring Data](labs/lab06_spring_data/README.md)
+  * [Lab 7: Spring Data REST](labs/lab07_spring_data_rest/README.md)
   * Spring Profiles
-  * Spring Actuator
-  * Spring Data
-  * Spring Data REST
 * Day 2 Operations
   * Monitoring Your Application
   * Operating Your Application
