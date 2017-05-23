@@ -34,7 +34,7 @@ The overwhelming majority of our time will be spent engaging with the technology
 
 ## Labs
 * Cloud Foundry Basics
-  * From Zero to Pushing Your First Application
+  * [Lab 1: From Zero to Pushing Your First Application](labs/lab01_cf_push/README.md)
   * Binding to Cloud Foundry Services
   * Scaling Applications
   * Monitoring Applications
