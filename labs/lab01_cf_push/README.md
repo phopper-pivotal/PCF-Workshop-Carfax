@@ -18,6 +18,9 @@ Follow the prompts, choosing default organization and space.
 
 ## cf push
 
+> NOTE: Ensure to [Download Course Materials](https://github.com/phopper-pivotal/PCF-Workshop-Carfax#download-materials) before continuing.
+> These can be put in any folder on your laptop or workstation.
+
 4. Change to the _Spring Music_ sample application directory **(located at apps/spring-music)**
 
 5. Push the application
@@ -105,6 +108,6 @@ In the example `cf push` above, the `urls:` section of the application health re
 This gives you important information about the state of the currently running _Spring Music_ instance, including what Spring Profiles are turned on and what Cloud Foundry services are bound.
 It will become important in the next lab!
 
-[Course Materials home](../../README.md#course-materials)
+[Course Materials home](../../README.md#labs)
 
 [Lab 2 - Binding to Cloud Foundry Services](../lab02_bind_services/README.md)

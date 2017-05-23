@@ -389,6 +389,6 @@ given we can use methods on the *_MovieRepository_* to retrieve data what other 
 
 [shhh here's a hint](http://docs.spring.io/spring-data/jpa/docs/current/reference/html/#jpa.query-methods.query-creation)
 
-[Course Materials home](../../README.md#course-materials)
+[Course Materials home](../../README.md#labs)
 
 [Lab 7 - Spring Data REST](../lab06_spring_actuator/README.md)
