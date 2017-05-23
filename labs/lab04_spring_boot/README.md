@@ -4,7 +4,7 @@
 1. visit [Spring Initializer](http://start.spring.io)
 ![](../../Common/images/lab1_boot.png)
 2. configure your project
-   * group name (leave as `io.pivotal`)
+   * group name (change to `io.pivotal`)
    * artifact name (`hello` is recommended)
    * *_maven_* for your build system
    * spring boot version 1.5.3
