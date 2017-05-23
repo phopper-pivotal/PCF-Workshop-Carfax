@@ -4,7 +4,7 @@
 1. visit [Spring Initializer](http://start.spring.io)
 ![](../../Common/images/lab1_boot.png)
 2. configure your project
-   * group name
+   * group name (leave as `com.example`)
    * artifact name (*_'hello'_* is recommended)
    * *_maven_* for your build system
    * spring boot version 1.5.3
@@ -20,23 +20,23 @@
    * annotate the method with: `@RequestMapping("/")` (package: `org.springframework.web.bind.annotation`)
    * your source should look something like this:
 ```java
- package bootworkshop.pivotal.io;
+package com.example.hello;
 
- import org.springframework.web.bind.annotation.RequestMapping;
- import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
- /**
-  * Created by rhardt on 9/21/16.
-  */
- @RestController
- public class HelloController {
+/**
+ * Created by phopper on 05/23/17.
+ */
+@RestController
+public class HelloController {
 
-     @RequestMapping("/")
-     public String sayHello(){
-         return "Hello Carfax!";
-     }
+    @RequestMapping("/")
+    public String sayHello(){
+        return "Hello Carfax!";
+    }
 
- }
+}
 ```
 
 
@@ -47,31 +47,31 @@
 ## push to Pivotal Cloud Foundry
 1. make sure you have all of your [prerequisites](https://github.com/phopper-pivotal/PCF-Workshop-Carfax/#pre-requisites) in place.
 2. build a runnable jar `./mvnw package`
-3. log in to cloud foundry `cf login -a api.yourpcfsystem.com`
+3. log in to cloud foundry `cf login -a api.system.pcf-apps.net`
 4. when prompted, provide your email and password
 5. if prompted, choose an appropriate org and space
-6. push your app:  `cf push hello -p ./target/hello-0.0.1-SNAPSHOT.jar -n "hello-rob" -b java_buildpack`
-   * instead of 'hello-rob' give your app a unique route (the `-n` option)
+6. push your app:  `cf push hello -p ./target/hello-0.0.1-SNAPSHOT.jar -n "hello-paul" -b java_buildpack_offline`
+   * instead of 'hello-paul' give your app a unique route (the `-n` option)
    * depending on what you called your app, the runnable jar (the `-p` option) may be different
    * watch the output, it will tell you the url of your app
 ```
-Creating app hello in org Vertical / space rhardt-sandbox as rhardt@pivotal.io...
+Creating app hello in org phopper / space dev as phopper@pivotal.io...
 OK
 
-Creating route hello-rob.cfapps.io...
+Creating route hello-paul.cfapps.io...
 OK
 
-Binding hello-rob.cfapps.io to hello...
+Binding hello-paul.cfapps.io to hello...
 OK
 ```
 7. open a web browser to the route of your app - from the output of the `cf push`
 8. celebrate
-9. let's create a manifest.yml at the top level of your project
+9. let's create a `manifest.yml` at the top level of your project
 ```yml
 ---
 applications:
 - name: hello
-  buildpack: java_buildpack
+  buildpack: java_buildpack_offline
   host: hello-${random-word}
   path: target/hello-0.0.1-SNAPSHOT.jar
 ```
@@ -79,7 +79,7 @@ applications:
 11. `cf apps` will show you all the deployed apps in your space along with their vital stats and mapped routes.  Notice the random words from the manifest file.
 ```
 $ cf apps
-Getting apps in org Vertical / space rhardt-sandbox as rhardt@pivotal.io...
+Getting apps in org phopper / space dev as phopper@pivotal.io...
 OK
 
 name                  requested state   instances   memory   disk   urls
@@ -108,7 +108,7 @@ class Greeting {
         return new Greeting("Hello", "Carfax", true);
     }
 ```
-5. now `cf push` and visit http://hello-random-words.yourhost.com/greeting
+5. now `cf push` and visit http://hello-random-words.apps.pcf-apps.net/greeting
 6. marvel at your newfound speed and productivity
 
 [Course Materials home](../../README.md#labs)
