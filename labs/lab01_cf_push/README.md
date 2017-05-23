@@ -18,7 +18,7 @@ Follow the prompts, choosing default organization and space.
 
 ## cf push
 
-> NOTE: Ensure to [Download Course Materials](../../PCF-Workshop-Carfax#download-materials) before continuing.
+> NOTE: Ensure to [Download Course Materials](https://github.com/phopper-pivotal/PCF-Workshop-Carfax#download-materials) before continuing.
 > These can be put in any folder on your laptop or workstation.
 
 4. Change to the _Spring Music_ sample application directory **(located at apps/spring-music)**
