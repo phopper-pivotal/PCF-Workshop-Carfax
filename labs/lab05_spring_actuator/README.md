@@ -3,10 +3,9 @@
 ## pick up where we left off
 1. navigate to your project from lab 4
    * alternatively, you can go to start.spring.io and
-   * go through all the steps from lab 4
+   * go through all the [steps from lab 4](https://github.com/phopper-pivotal/PCF-Workshop-Carfax/blob/master/labs/lab04_spring_boot/README.md)
    * when you specify dependencies, add `actuator` and `HATEOAS`
-![](lab2_boot.png)
-2. assuming, you don't want to repeat yourself, open the pom.xml from lab 4
+2. assuming, you don't want to repeat yourself, open the `pom.xml` from lab 4
 3. add the following 2 dependencies
 ```xml
 <dependency>
@@ -37,7 +36,7 @@
 ## cf push
 1. repackage `./mvnw clean package`
 2. push your app:  `cf push`
-   * visit http://hello-your-random.yoursite.com/actuator
+   * visit http://hello-your-random.apps.pcf-apps.net/actuator
    * note some of the differences from your local version
 3. traverse to Apps Manager and select your application
 4. note the Spring Boot icon next to the app name
@@ -49,7 +48,7 @@
 2. Support would also like to see a dump of the last N requests to come in.
 3. They would also like self-service access to the app's overall health when it isn't spinning out of control. What can you give them?
 4. You think you might have left the "SPIN_OUT_OF_CONTROL_WHEN_CAT_VIDEOS_ARE_REQUSTED" environment variable set to true.  How can you validate the apps environment variables?
-5. The /greeting endpoint doesn't seem to be mapped.  How can we determine all the endpoint mappings?
+5. The `/greeting` endpoint doesn't seem to be mapped.  How can we determine all the endpoint mappings?
 
 [Course Materials home](../../README.md#labs)
 
