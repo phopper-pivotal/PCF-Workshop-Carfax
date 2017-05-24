@@ -40,7 +40,7 @@
        *  mpgHighway
        *  features
        *  description
-       * add an attribute, generated value for movie identifier (see example below)
+       * add an attribute, generated value for Vehicle identifier (see example below)
     *  use IDE to generate getter/setter methods
     *  use IDE to generate a default constructor void of and attributes as arguments
     *  use IDE to generate a constructor that takes all attributes as arguments
@@ -61,6 +61,9 @@ public class Vehicle implements Serializable {
     private long id;
 
     private String listDate;
+    private String manufacturedYear;
+    private String make;
+    private String model;
     private Number price;
     private long mileage;
     private String location;
@@ -78,10 +81,16 @@ public class Vehicle implements Serializable {
     private String features;
     private String description;
 
-    private Vehicle() {}
+    public Vehicle() {}
 
-    public Vehicle(String listDate, Number price, long mileage, String location, String exteriorColor, String interiorColor, String driveType, String transmission, String bodyStyle, String engine, String fuel, String vin, String stockNumber, int mgpCity, int mpgHighway, String features, String description) {
+    public Vehicle(String listDate, String manufacturedYear, String make, String model, double price, long mileage, String location, String exteriorColor,
+                   String interiorColor, String driveType, String transmission, String bodyStyle,
+                   String engine, String fuel, String vin, String stockNumber, int mgpCity, int mpgHighway,
+                   String features, String description) {
         this.listDate = listDate;
+        this.manufacturedYear = manufacturedYear;
+        this.make = make;
+        this.model = model;
         this.price = price;
         this.mileage = mileage;
         this.location = location;
@@ -114,6 +123,30 @@ public class Vehicle implements Serializable {
 
     public void setListDate(String listDate) {
         this.listDate = listDate;
+    }
+
+    public String getManufacturedYear() {
+        return manufacturedYear;
+    }
+
+    public void setManufacturedYear(String manufacturedYear) {
+        this.manufacturedYear = manufacturedYear;
+    }
+
+    public String getMake() {
+        return make;
+    }
+
+    public void setMake(String make) {
+        this.make = make;
+    }
+
+    public String getModel() {
+        return model;
+    }
+
+    public void setModel(String model) {
+        this.model = model;
     }
 
     public Number getPrice() {
@@ -249,8 +282,11 @@ public class Vehicle implements Serializable {
         return "Vehicle{" +
                 "id=" + id +
                 ", listDate='" + listDate + '\'' +
-                ", price=" + price +
-                ", mileage=" + mileage +
+                ", manufacturedYear='" + manufacturedYear + '\'' +
+                ", make='" + make + '\'' +
+                ", model='" + model + '\'' +
+                ", price=" + price + '\'' +
+                ", mileage=" + mileage + '\'' +
                 ", location='" + location + '\'' +
                 ", exteriorColor='" + exteriorColor + '\'' +
                 ", interiorColor='" + interiorColor + '\'' +
@@ -274,44 +310,47 @@ public class Vehicle implements Serializable {
 1. create package io.pivotal.repository
 2. create interface **_VehicleRepository_**
    *  add `extends CrudRepository<Vehicle, Long>` to the interface
-   *  add method `List<Movie> findByVin(String title);` to the interface
+   *  add method `List<Vehicle> findByBodyStyle(String bodyStyle);` to the interface
 
 ## a CommandLineRunner is our friend
 1. let's load this entity backed by H2 with data
-  *  add the code below to WatchingApplication class 
+  *  add the code below to UsedVehicleApplication class 
 ```java
-    @Bean
-    public CommandLineRunner demo(MovieRepository vehicleRepository) {
-        return (args) -> {
-            // save a couple of movies
-            vehicleRepository.save(new Vehicle("Frozen", "2013", "PG", "27 Nov 2013", "102 min", "Animation, Adventure, Comedy"));
-            vehicleRepository.save(new Vehicle("Toy Story", "1995", "G", "22 Nov 1995", "81 min", "Animation, Adventure, Comedy"));
-            vehicleRepository.save(new Vehicle("Muppets Most Wanted", "2014", "PG", "21 Mar 2014", "107 min", "Adventure, Comedy, Crime"));
-            vehicleRepository.save(new Vehicle("The Incredibles", "2004", "PG", "05 Nov 204", "115 min", "Animation, Action, Adventure"));
+@Bean
+public CommandLineRunner run(VehicleRepository vehicleRepository) {
+    return (args) -> {
+        // save a couple of Vehicles
+        vehicleRepository.save(new Vehicle("2017-05-23", "2015", "Toyota", "RAV4 XLE", 22272, 11426, "65201", "Red", "Black", "FWD", "Automatic", "SUV",
+                                "4 Cyl", "Gasoline", "2T3WFREVXFW223703", "TN223703", 20, 30, "", ""));
+        vehicleRepository.save(new Vehicle("2017-05-23", "2014", "Nissan", "Nissan Rogue S", 14738, 34667, "65201", "White", "Black", "AWD", "Automatic", "SUV",
+                "4 Cyl", "Gasoline", "JN8AS5MV5EW701806", "PN701806", 22, 27, "", ""));
+        vehicleRepository.save(new Vehicle("2017-05-23", "2015", "Kia", "Sorento LX", 17980, 26383, "65201", "Silver", "Black", "AWD", "Automatic", "SUV",
+                "4 Cyl", "Gasoline", "5XYKT3A66FG595301", "PK595301", 20, 27, "", ""));
+        vehicleRepository.save(new Vehicle("2017-05-23", "2014", "Volkswagen", "Tiguan S", 14997, 40525, "65201", "Gray", "Black", "AWD", "Automatic", "SUV",
+                "4 Cyl", "Gasoline", "WVGBV3AXXEW619101", "PH619101", 20, 26, "", ""));
 
-            // fetch all movies
-            System.out.println("Vehicle found with findAll()");
-            System.out.println("---------------------------");
-            for (Vehicle movie : vehicleRepository.findAll()) {
-                System.out.println(movie.toString());
-            }
-
-
-            // fetch one movie
-            System.out.println("Vehicle found with findOne()");
-            System.out.println("---------------------------");
-            Movie Vehicle = vehicleRepository.findOne(1L);
+        // fetch all vehicle
+        System.out.println("Vehicles found with findAll()");
+        System.out.println("---------------------------");
+        for (Vehicle Vehicle : vehicleRepository.findAll()) {
+            System.out.println(Vehicle.toString());
+        }
 
 
-            // fetch movies by title
-            System.out.println("Vehicle found with findByTitle('Frozen')");
-            System.out.println("---------------------------");
-            for (Vehicle frozen : vehicleRepository.findByVin("Frozen")) {
-                System.out.println(frozen.toString());
-            }
+        // fetch one vehicle
+        System.out.println("Vehicles found with findOne()");
+        System.out.println("---------------------------");
+        Vehicle Vehicle = vehicleRepository.findOne(1L);
 
-        };
-    }
+
+        // fetch vehicle by body style
+        System.out.println("Vehicles found with findByBodyStyle('SUV')");
+        System.out.println("---------------------------");
+        for (Vehicle frozen : vehicleRepository.findByBodyStyle("SUV")) {
+            System.out.println(frozen.toString());
+        }
+    };
+}
 ```
 2. from project root directory, run `mvn sprint-boot:run`
 
@@ -320,34 +359,37 @@ public class Vehicle implements Serializable {
 **_how much boilerplate code did we have to introduce?_**
 
 ## can we query by other attributes
-1. let's add some other methods to retrieve our movies
-   *  add a method to **_MovieRepository_** to findByRated `List<Movie> findByRated(String rated);`
-   *  add code to the CommandLineRunner in **_WatchingApplication_** to output findByRated
+1. let's add some other methods to retrieve our Vehicles
+   *  add a method to **_VehicleRepository_** to findByMake `List<Vehicle> findByMake(String make);`
+   *  add code to the CommandLineRunner in **_UsedVehicleApplication_** to output findByMake
   
 ```java
-// fetch movies by rated
-System.out.println("Movies found with findByRating('G'");
+// fetch Vehicles by make
+System.out.println("Vehicles found with findByMake('Toyota')");
 System.out.println("---------------------------");
-System.out.println(movieRepository.findByRated("G").toString());
+System.out.println(vehicleRepository.findByMake("Kia").toString());
 System.out.println();
 ```
-2. from project root directory, run `mvn sprint-boot:run` +
+2. from project root directory, run `mvn sprint-boot:run`
 
 **_what just happened?_**
 
 ## that's great but what about wildcards
 1. let's add some wildcard method to retrieve where genre starts with "Animation"
-2. add a method findByGenreStartsWith to **_MovieRepository_**
+2. add a method findByGenreStartsWith to **_VehicleRepository_**
 ```java
-List<Movie> findByGenreStartsWith(String genre);
+List<Vehicle> findByVinStartsWith(String genre);
 ---------------------------------------------------------------------
 ```
-3. add code to the CommandLineRunner in *_WatchingApplication_* to output findByRated
+3. add code to the CommandLineRunner in *_UsedVehicleApplication_* to output findByVinStartsWith
 ```java
-// fetch movies by rated
-System.out.println("Movies found with findByGenreStartsWith('Animation'");
+// fetch Vehicles by make
+System.out.println("Vehicles found with findByMake('Toyota')");
 System.out.println("---------------------------");
-movieRepository.findByGenreStartsWith("Animation").forEach(genres -> System.out.println(genres));
+for (Vehicle kia : vehicleRepository.findByMake("Kia")) {
+    System.out.println(kia.toString());
+}
+System.out.println();
 ```
 4. from project root directory, run `mvn sprint-boot:run`
 
@@ -385,7 +427,7 @@ hello                 started           1/1         1G       1G     hello-unscal
 4. verify your app at its new randomly-generated route
 
 # extra credit
-given we can use methods on the *_MovieRepository_* to retrieve data what other ways can you query for wildcards + 
+given we can use methods on the *_VehicleRepository_* to retrieve data what other ways can you query for wildcards
 
 [shhh here's a hint](http://docs.spring.io/spring-data/jpa/docs/current/reference/html/#jpa.query-methods.query-creation)
 
