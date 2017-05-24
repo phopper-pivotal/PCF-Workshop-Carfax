@@ -438,4 +438,4 @@ given we can use methods on the *_VehicleRepository_* to retrieve data what othe
 
 [Course Materials home](../../README.md#labs)
 
-[Lab 7 - Spring Data REST](../lab06_spring_actuator/README.md)
+[Lab 7 - Spring Data REST](../lab07_spring_data_rest/README.md)
