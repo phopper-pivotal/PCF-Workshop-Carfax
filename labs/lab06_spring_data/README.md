@@ -408,23 +408,28 @@ System.out.println();
 ```yml
 ---
 applications:
-- name: hello
-  buildpack: java_buildpack
-  host: hello-${random-word}
-  path: target/hello-0.0.1-SNAPSHOT.jar
+- name: used-vehicle
+  buildpack: java_buildpack_offline
+  host: used-vehicle-${random-word}
+  path: target/used-vehicle-0.0.1-SNAPSHOT.jar
 ```
 2. `cf push`
 
 3. `cf apps` will show you all the deployed apps in your space along with their vital stats and mapped routes.  Notice the random words from the manifest file.
 ```
 $ cf apps
-Getting apps in org Vertical / space rhardt-sandbox as rhardt@pivotal.io...
+Getting apps in org test / space dev as admin...
 OK
 
-name                  requested state   instances   memory   disk   urls
-hello                 started           1/1         1G       1G     hello-unscaled-multimillion.cfapps.io
+name            requested state   instances   memory   disk   urls
+attendees       started           3/3         512M     1G     attendees-unconsecrative-roundhouse.apps.pcf-apps.net
+cf-scale-boot   started           5/5         512M     1G     cf-scale-boot-arcifinious-wolver.apps.pcf-apps.net
+spring-music    started           1/1         512M     1G     spring-music-chondromatous-hydrographer.apps.pcf-apps.net
+used-vehicle    started           1/1         1G       1G     used-vehicle-unburstable-nurturer.apps.pcf-apps.net
 ```
 4. verify your app at its new randomly-generated route
+
+5. `cf logs used-vehicle --recent` to see the logs from the app
 
 # extra credit
 given we can use methods on the *_VehicleRepository_* to retrieve data what other ways can you query for wildcards
