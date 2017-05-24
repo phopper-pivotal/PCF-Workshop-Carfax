@@ -1,0 +1,6 @@
+---
+applications:
+- name: used-vehicle
+  buildpack: java_buildpack_offline
+  host: used-vehicle-${random-word}
+  path: target/used-vehicle-0.0.1-SNAPSHOT.jar
