@@ -1,4 +1,4 @@
-# Lab 4: Spring Data
+# Spring Data
 
 ## let's build an entity
 1. navigate to start.spring.io
@@ -64,7 +64,7 @@ public class Vehicle implements Serializable {
     private String manufacturedYear;
     private String make;
     private String model;
-    private Number price;
+    private long price;
     private long mileage;
     private String location;
     private String exteriorColor;
@@ -76,16 +76,16 @@ public class Vehicle implements Serializable {
     private String fuel;
     private String vin;
     private String stockNumber;
-    private int mgpCity;
+    private int mpgCity;
     private int mpgHighway;
     private String features;
     private String description;
 
     public Vehicle() {}
 
-    public Vehicle(String listDate, String manufacturedYear, String make, String model, double price, long mileage, String location, String exteriorColor,
+    public Vehicle(String listDate, String manufacturedYear, String make, String model, long price, long mileage, String location, String exteriorColor,
                    String interiorColor, String driveType, String transmission, String bodyStyle,
-                   String engine, String fuel, String vin, String stockNumber, int mgpCity, int mpgHighway,
+                   String engine, String fuel, String vin, String stockNumber, int mpgCity, int mpgHighway,
                    String features, String description) {
         this.listDate = listDate;
         this.manufacturedYear = manufacturedYear;
@@ -103,7 +103,7 @@ public class Vehicle implements Serializable {
         this.fuel = fuel;
         this.vin = vin;
         this.stockNumber = stockNumber;
-        this.mgpCity = mgpCity;
+        this.mpgCity = mpgCity;
         this.mpgHighway = mpgHighway;
         this.features = features;
         this.description = description;
@@ -149,11 +149,11 @@ public class Vehicle implements Serializable {
         this.model = model;
     }
 
-    public Number getPrice() {
+    public long getPrice() {
         return price;
     }
 
-    public void setPrice(Number price) {
+    public void setPrice(long price) {
         this.price = price;
     }
 
@@ -245,12 +245,12 @@ public class Vehicle implements Serializable {
         this.stockNumber = stockNumber;
     }
 
-    public int getMgpCity() {
-        return mgpCity;
+    public int getMpgCity() {
+        return mpgCity;
     }
 
-    public void setMgpCity(int mgpCity) {
-        this.mgpCity = mgpCity;
+    public void setMpgCityCity(int mgpCity) {
+        this.mpgCity = mpgCity;
     }
 
     public int getMpgHighway() {
@@ -297,7 +297,7 @@ public class Vehicle implements Serializable {
                 ", fuel='" + fuel + '\'' +
                 ", vin='" + vin + '\'' +
                 ", stockNumber='" + stockNumber + '\'' +
-                ", mgpCity=" + mgpCity +
+                ", mgpCity=" + mpgCity +
                 ", mpgHighway=" + mpgHighway +
                 ", features='" + features + '\'' +
                 ", description='" + description + '\'' +
@@ -346,8 +346,8 @@ public CommandLineRunner run(VehicleRepository vehicleRepository) {
         // fetch vehicle by body style
         System.out.println("Vehicles found with findByBodyStyle('SUV')");
         System.out.println("---------------------------");
-        for (Vehicle frozen : vehicleRepository.findByBodyStyle("SUV")) {
-            System.out.println(frozen.toString());
+        for (Vehicle suv : vehicleRepository.findByBodyStyle("SUV")) {
+            System.out.println(suv.toString());
         }
     };
 }
@@ -376,17 +376,17 @@ System.out.println();
 
 ## that's great but what about wildcards
 1. let's add some wildcard method to retrieve where genre starts with "Animation"
-2. add a method findByGenreStartsWith to **_VehicleRepository_**
+2. add a method findByModelStartsWith to **_VehicleRepository_**
 ```java
-List<Vehicle> findByVinStartsWith(String genre);
+List<Vehicle> findByModelStartsWith(String model);
 ---------------------------------------------------------------------
 ```
 3. add code to the CommandLineRunner in *_UsedVehicleApplication_* to output findByVinStartsWith
 ```java
 // fetch Vehicles by make
-System.out.println("Vehicles found with findByMake('Toyota')");
+System.out.println("Vehicles found with findByModel("Sor")");
 System.out.println("---------------------------");
-for (Vehicle kia : vehicleRepository.findByMake("Kia")) {
+for (Vehicle kia : vehicleRepository.findByModel("Sor")) {
     System.out.println(kia.toString());
 }
 System.out.println();
