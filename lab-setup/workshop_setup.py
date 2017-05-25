@@ -64,20 +64,20 @@ if __name__=="__main__":
 	#createOrg(org)
 	#createSpace(org, "dev")	
     #createSpace(org, "production")
-	with open("admins.txt") as f:
-                for line in f:
-                        email = line.strip()
-			if not email:
-				continue
-                        createUser(email=email, password=DEFAULT_ADMIN_PASSWORD)
-                        org_roles= ["OrgManager", "BillingManager", "OrgAuditor"]
-                        for role in org_roles:
-                                setOrgRole(email=email, org=org, role=role)
-                        spaces = ['development', 'production']
-                        space_roles= ["SpaceDeveloper", "SpaceManager", "SpaceAuditor"]
-			for space in spaces:
-	                        for role in space_roles:
-        	                        setSpaceRole(email=email, org=org, space=space, role=role)
+	#with open("admins.txt") as f:
+        #        for line in f:
+        #                email = line.strip()
+	#		if not email:
+	#			continue
+        #                createUser(email=email, password=DEFAULT_ADMIN_PASSWORD)
+        #                org_roles= ["OrgManager", "BillingManager", "OrgAuditor"]
+        #                for role in org_roles:
+        #                        setOrgRole(email=email, org=org, role=role)
+        #                spaces = ['development', 'production']
+        #                space_roles= ["SpaceDeveloper", "SpaceManager", "SpaceAuditor"]
+	#		for space in spaces:
+	#                        for role in space_roles:
+        #	                        setSpaceRole(email=email, org=org, space=space, role=role)
 
 	with open("users.txt") as f:
 		for line in f:
